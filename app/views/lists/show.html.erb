@@ -1,1 +1,16 @@
-<%= @list.name %>
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+
+<span><%= "no movies" if @list.movies.empty?%></span>
+<div><button type="button" data-bs-toggle="modal" data-bs-target="#new_movie_modal"> </button></div>
+<div class = "container d-flex align-items-center justify-content-center py-5">
+<div class = "row">
+
+</div>
+<%= render "bookmarks/modal", list:@list, bookmark:@bookmark %>
