@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show]
+  # before_action :set_list, only: [:show]
 
 
   def index
@@ -7,7 +7,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    @bookmark = Bookmark.new
+    @list = List.find(params[:id])
   end
 
   def new
@@ -30,8 +30,8 @@ class ListsController < ApplicationController
     params.require(:list).permit(:name)
   end
 
-  def set_list
-    @list = List.find(params[:id])
-  end
+  # def set_list
+  #   @list = List.find(params[:id])
+  # end
 
 end

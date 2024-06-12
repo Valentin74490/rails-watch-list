@@ -14,8 +14,8 @@ Rails.application.routes.draw do
 
     # # Resources syntax:
     resources :lists, except: [:edit, :update, :destroy] do
-    resources :bookmarks, only: [:new, :create]
-     end
+      resources :bookmarks, only: [:index, :new, :create]
+    end
 
 
 

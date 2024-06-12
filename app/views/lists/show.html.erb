@@ -7,10 +7,24 @@
   </div>
 </div>
 
-<span><%= "no movies" if @list.movies.empty?%></span>
-<div><button type="button" data-bs-toggle="modal" data-bs-target="#new_movie_modal"> </button></div>
+<%= link_to "Je rajoute un bookmark", new_list_bookmark_path(@list) %>
+<%= link_to "home", root_path %>
+
+
+
+
 <div class = "container d-flex align-items-center justify-content-center py-5">
 <div class = "row">
+<% @list.bookmarks.each do |bookmark|%>
+<div class="card m-3" style="width: 18rem;">
+  <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" alt="...">
+  <p><%= bookmark.comment %></p>
+  <p> <%= bookmark.movie.title %></p>
+  <p><%= bookmark.movie.overview %></p>
 
+
+  </div>
+  </div>
+<% end %>
 </div>
-<%= render "bookmarks/modal", list:@list, bookmark:@bookmark %>
+</div>
